@@ -54,7 +54,7 @@ public class MainPageDebugTest extends MainPageTest {
 		@SuppressWarnings("unchecked")
 		List<HtmlScript> scripts = (List<HtmlScript>) page.getByXPath("html/head/script");
 		HtmlScript script = (HtmlScript) scripts.get(5);
-		assertEquals("if(!JAWR){var JAWR = {};};;JAWR.jawr_dwr_path='/jawr-dwr2.x-integration-test/dwr';JAWR.dwr_scriptSessionId='11111';JAWR.app_context_path='/jawr-dwr2.x-integration-test';",
+		assertEquals("if(!JAWR){var JAWR = {};};;JAWR.jawr_dwr_path='/jawr-dwr3.x-integration-test/dwr';JAWR.app_context_path='/jawr-dwr3.x-integration-test';",
 				 Utils.removeGeneratedRandomReferences(script.getFirstChild().getNodeValue()));
 		
 		// Test generated Script link

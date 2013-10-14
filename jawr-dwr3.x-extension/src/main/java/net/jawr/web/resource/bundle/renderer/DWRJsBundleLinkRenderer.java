@@ -21,6 +21,8 @@ import net.jawr.web.resource.bundle.renderer.BundleRendererContext;
 import net.jawr.web.resource.bundle.renderer.JavascriptHTMLBundleLinkRenderer;
 
 /**
+ * The DWR Js bundle link renderer
+ * 
  * @author ibrahim Chaehoi
  * 
  */

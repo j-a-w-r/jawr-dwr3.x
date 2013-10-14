@@ -1,5 +1,5 @@
 /**
- * Copyright 2008 Jordi Hern�ndez Sell�s
+ * Copyright 2008 Jordi Hernández Sellés
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
  * except in compliance with the License. You may obtain a copy of the License at
@@ -16,50 +16,58 @@ package net.jawr.web.resource.bundle.renderer;
 import org.directwebremoting.impl.DefaultSecureIdGenerator;
 
 /**
- * This class adds a small script to pages, which is needed when integrating JAWR with DWR.
+ * This class adds a small script to pages, which is needed when integrating
+ * JAWR with DWR.
  * 
- * 
- * @author Jordi Hern�ndez Sell�s
+ * @author Jordi Hernández Sellés
  */
 public class DWRParamWriter {
 	private static final DefaultSecureIdGenerator ID_GENERATOR = new DefaultSecureIdGenerator();
-	
-	private static boolean USE_DYNAMIC_SESSION_ID; // Should this evolve to an interceptor chain for the AbstractBundleLinkRenderer?
-	
-	
-	
+
+	private static boolean USE_DYNAMIC_SESSION_ID; // Should this evolve to an
+													// interceptor chain for the
+													// AbstractBundleLinkRenderer?
+
 	/**
-	 * Adds a script with DWR needed params, including a generated ID that DWR needs. 
+	 * Adds a script with DWR needed params, including a generated ID that DWR
+	 * needs.
 	 * 
 	 * @param contextPath
 	 * @param dwrPath
 	 * @return
 	 */
-	public static StringBuffer buildRequestSpecificParams(String contextPath,String dwrPath) {
-		StringBuffer sb = new StringBuffer("<script type=\"text/javascript\">if(!JAWR){var JAWR = {};};");
+	public static StringBuffer buildRequestSpecificParams(String contextPath,
+			String dwrPath) {
+		StringBuffer sb = new StringBuffer(
+				"<script type=\"text/javascript\">if(!JAWR){var JAWR = {};};");
 		sb.append(buildDWRJSParams(contextPath, dwrPath));
-        sb.append("</script>").append("\n");
-		
+		sb.append("</script>").append("\n");
+
 		return sb;
 	}
-	
-	public static StringBuffer buildDWRJSParams(String contextPath,String dwrPath) {
+
+	public static StringBuffer buildDWRJSParams(String contextPath,
+			String dwrPath) {
 		StringBuffer sb = new StringBuffer(";");
 		sb.append("JAWR.jawr_dwr_path='");
-        sb.append(dwrPath).append("';");
-        
-        if(USE_DYNAMIC_SESSION_ID)
-        	sb.append("JAWR.dwr_scriptSessionId='").append(ID_GENERATOR.generate()).append("';");
-		
-        sb.append("JAWR.app_context_path='").append(contextPath).append("';");
-        return sb;
+		sb.append(dwrPath).append("';");
+
+		if (USE_DYNAMIC_SESSION_ID)
+			sb.append("JAWR.dwr_scriptSessionId='")
+					.append(ID_GENERATOR.generate()).append("';");
+
+		sb.append("JAWR.app_context_path='").append(contextPath).append("';");
+		return sb;
 	}
 
-
-
+	/**
+	 * Sets the flag indicating that we must yse the dynamic session ID
+	 * 
+	 * @param useDynamicSessionId
+	 *            the flag to set
+	 */
 	public static void setUseDynamicSessionId(boolean useDynamicSessionId) {
 		DWRParamWriter.USE_DYNAMIC_SESSION_ID = useDynamicSessionId;
 	}
 
-	
 }

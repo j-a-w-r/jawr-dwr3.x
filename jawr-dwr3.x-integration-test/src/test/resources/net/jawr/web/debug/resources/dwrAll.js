@@ -1,12 +1,20 @@
-// Provide a default path to dwr.engine
-if (dwr == null) var dwr = {};
-if (dwr.engine == null) dwr.engine = {};
-if (DWREngine == null) var DWREngine = dwr.engine;
+if (typeof dwr == 'undefined' || dwr.engine == undefined) throw new Error('You must include DWR engine before including this file');
 
+(function() {
+  if (dwr.engine._getObject("Demo") == undefined) {
+    var p;
+    
+    p = {};
+    p._path = '/jawr-dwr3.x-integration-test/dwr';
 
-
-if (Demo == null) var Demo = {};
-Demo._path = ''+JAWR.jawr_dwr_path+'';
-Demo.sayHello = function(p0, callback) {
-  dwr.engine._execute(Demo._path, 'Demo', 'sayHello', p0, callback);
-}
+    /**
+     * @param {class java.lang.String} p0 a param
+     * @param {function|Object} callback callback function or options object
+     */
+    p.sayHello = function(p0, callback) {
+      return dwr.engine._execute(p._path, 'Demo', 'sayHello', arguments);
+    };
+    
+    dwr.engine._setObject("Demo", p);
+  }
+})();
