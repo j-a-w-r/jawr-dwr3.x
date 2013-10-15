@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import net.jawr.web.JawrConstant;
 import net.jawr.web.resource.bundle.generator.AbstractJavascriptGenerator;
 import net.jawr.web.resource.bundle.generator.GeneratorContext;
 import net.jawr.web.resource.bundle.generator.ResourceGenerator;
@@ -154,9 +155,12 @@ public class DWR3BeanGenerator extends AbstractJavascriptGenerator implements
 			final GeneratorContext context) throws IOException {
 		CachingHandler cachingHandler = (CachingHandler) getContainer(context)
 				.getBean(path);
+		String dwrMapping = context.getConfig().getDwrMapping();
+		if(!dwrMapping.startsWith(JawrConstant.URL_SEPARATOR)){
+			dwrMapping = JawrConstant.URL_SEPARATOR+dwrMapping;
+		}
 		return cachingHandler.generateCachableContent(context
-				.getServletContext().getContextPath(), context.getConfig()
-				.getDwrMapping(), "");
+				.getServletContext().getContextPath(), dwrMapping, "");
 	}
 
 	/**
