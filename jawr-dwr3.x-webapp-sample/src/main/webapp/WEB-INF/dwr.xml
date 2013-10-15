@@ -12,6 +12,11 @@
     </filter>
     -->
 
+	<!-- simpletext -->
+    <create creator="new" javascript="Demo">
+      <param name="class" value="org.getahead.dwrdemo.simpletext.Demo"/>
+    </create>
+    
     <!-- intro - for the test on index.html -->
     <create creator="new" javascript="Intro">
       <param name="class" value="org.getahead.dwrdemo.intro.Intro"/>
