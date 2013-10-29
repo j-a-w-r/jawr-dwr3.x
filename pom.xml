@@ -231,7 +231,7 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 		</dependency>
-		
+
 		<!-- For test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -338,14 +338,26 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<!-- profiles> <profile> <id>default</id> <activation> <activeByDefault>true</activeByDefault> 
-		</activation> <modules> <module>jawr-dwr3.x-extension</module> </modules> 
-		</profile> <profile> <id>all</id> <activation> <activeByDefault>false</activeByDefault> 
-		</activation> <modules> <module>jawr-dwr3.x-extension</module> <module>jawr-dwr3.x-integration-test</module> 
-		<module>jawr-dwr3.x-webapp-sample</module> </modules> </profile> </profiles -->
-	<modules>
-		<module>jawr-dwr3.x-extension</module>
-		<module>jawr-dwr3.x-integration-test</module>
-		<module>jawr-dwr3.x-webapp-sample</module>
-	</modules>
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>jawr-dwr3.x-extension</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>all</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<modules>
+				<module>jawr-dwr3.x-extension</module>
+				<module>jawr-dwr3.x-integration-test</module>
+				<module>jawr-dwr3.x-webapp-sample</module>
+			</modules>
+		</profile>
+	</profiles>
 </project>

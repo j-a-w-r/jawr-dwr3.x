@@ -11,17 +11,13 @@
 	<name>DWR Sample Webapp</name>
 	<properties>
 		<jawr-maven-plugin.version>1.5-SNAPSHOT</jawr-maven-plugin.version>
+		<smartsprites.version>0.2.10</smartsprites.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jawr-dwr3.x-extension</artifactId>
 			<version>${project.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.carrotsearch</groupId>
-			<artifactId>smartsprites</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -81,13 +77,9 @@
 				</executions>
 				<dependencies>
 					<dependency>
-						<groupId>com.carrot2</groupId>
-						<artifactId>smartsprites</artifactId>
-						<version>${smartsprites.version}</version>
-					</dependency>
-					<dependency>
 						<groupId>org.directwebremoting</groupId>
 						<artifactId>dwr</artifactId>
+						<version>${dwr.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>javax.servlet</groupId>
@@ -108,12 +100,6 @@
 				<groupId>net.jawr.tools</groupId>
 				<artifactId>maven-jawr-plugin</artifactId>
 				<version>${jawr-maven-plugin.version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>com.carrot2</groupId>
-						<artifactId>smartsprites</artifactId>
-					</dependency>
-				</dependencies>
 				<executions>
 					<execution>
 						<!-- Use this phase so that maven war includes our bundles -->
