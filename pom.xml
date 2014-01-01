@@ -51,7 +51,7 @@
 	</mailingLists>
 	<properties>
 		<java.version>1.6</java.version>
-		<jawr-core.version>3.5-SNAPSHOT</jawr-core.version>
+		<jawr-core.version>3.5</jawr-core.version>
 		<dwr.version>3.0.0-rc3-SNAPSHOT</dwr.version>
 		<mockito.version>1.9.5</mockito.version>
 		<junit.version>4.11</junit.version>
