@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>net.jawr.extensions</groupId>
 		<artifactId>jawr-dwr3.x-parent</artifactId>
-		<version>3.5-SNAPSHOT</version>
+		<version>3.5.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>jawr-dwr3.x-webapp-sample</artifactId>
 	<packaging>war</packaging>
 	<name>DWR Sample Webapp</name>
 	<properties>
-		<jawr-maven-plugin.version>1.5-SNAPSHOT</jawr-maven-plugin.version>
+		<jawr-maven-plugin.version>1.5.1-SNAPSHOT</jawr-maven-plugin.version>
 		<smartsprites.version>0.2.10</smartsprites.version>
 	</properties>
 	<dependencies>
