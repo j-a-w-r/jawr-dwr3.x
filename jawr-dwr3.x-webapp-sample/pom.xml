@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 	<name>DWR Sample Webapp</name>
 	<properties>
-		<jawr-maven-plugin.version>1.5.1-SNAPSHOT</jawr-maven-plugin.version>
+		<jawr-maven-plugin.version>1.6-SNAPSHOT</jawr-maven-plugin.version>
 		<smartsprites.version>0.2.10</smartsprites.version>
 	</properties>
 	<dependencies>
