@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.jawr.extensions</groupId>
 	<artifactId>jawr-dwr3.x-parent</artifactId>
-	<version>3.5.1-SNAPSHOT</version>
+	<version>3.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>jawr DWR3.x parent pom</name>
 	<url>http://jawr.java.net/</url>

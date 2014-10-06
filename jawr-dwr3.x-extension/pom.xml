@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>net.jawr.extensions</groupId>
 		<artifactId>jawr-dwr3.x-parent</artifactId>
-		<version>3.5.1-SNAPSHOT</version>
+		<version>3.6-SNAPSHOT</version>
 	</parent>
 	<artifactId>jawr-dwr3.x-extension</artifactId>
 	<name>jawr-dwr3.x-extension</name>
